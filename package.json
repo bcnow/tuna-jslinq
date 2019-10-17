@@ -1,6 +1,6 @@
 {
   "name": "tuna-jslinq",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Linq methods for JavaScript/TypeScript for working with Arrays",
   "main": "dist/tuna-jslinq.js",
   "typings": "dist/typings/JSLinq.d.ts",
@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/bcnow/tuna-jslinq.git"
   },
+  "files": [
+    "/dist"
+  ],
   "keywords": [
     "Linq",
     ".NET",
