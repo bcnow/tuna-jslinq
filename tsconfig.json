@@ -4,7 +4,8 @@
         "module": "es6",
         "target": "es5",
         "outDir": "./dist/",
-        "declaration": true
+        "declaration": true,
+        "declarationDir": "dist/typings/"
     },
     "files": [
         "./src/JSLinqHelper.ts",
