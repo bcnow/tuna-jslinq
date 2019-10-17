@@ -1,15 +1,4 @@
-declare class JSLinqHelper {
-    static NonEnumerable<T>(instance: T, name: keyof T, value: any): void;
-    static OrderCompareFunction<T>(valueSelector: (item: T) => any, a: T, b: T, invert: boolean): number;
-}
-interface IArrayState<T> {
-    Order: JSLinqOrder<T>[];
-}
-interface Array<T> {
-    _JSLinq: IArrayState<T>;
-}
-declare const JSLinq: <T = any>(array?: T | T[] | undefined) => T[];
-interface Array<T> {
+interface ArrayJSLinq<T> {
     /**
      * Removes all items in the array
      */
@@ -276,13 +265,4 @@ interface Array<T> {
     ToDictionary<U, R>(keySelector: (item: T) => U, valueSelector?: (item: T) => R): {
         [key: string]: R[];
     };
-}
-declare enum JSLinqOrderDirection {
-    Ascending = 0,
-    Descending = 1
-}
-declare class JSLinqOrder<T> {
-    readonly direction: JSLinqOrderDirection;
-    readonly selector: (item: T) => any;
-    constructor(direction: JSLinqOrderDirection, selector: (item: T) => any);
 }

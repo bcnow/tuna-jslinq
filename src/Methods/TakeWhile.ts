@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "TakeWhile",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "TakeWhile",
     function <T>(this: T[], selector: (item: T, index: number) => boolean): T[] {
         const result = [];
         const length = this.length;

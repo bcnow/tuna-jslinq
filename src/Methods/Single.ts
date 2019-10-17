@@ -1,3 +1,5 @@
+import { JSLinqHelper } from "../JSLinqHelper";
+
 JSLinqHelper.NonEnumerable(Array.prototype, "Single",
     function <T>(this: T[], selector?: (item: T, index: number) => boolean): T {
         const result = selector ? this.Where(selector) : this;

@@ -1,3 +1,5 @@
+import { JSLinqHelper } from "../JSLinqHelper";
+
 JSLinqHelper.NonEnumerable(Array.prototype, "ToDictionary",
     function <T>(this: T[], keySelector: (item: T) => any, valueSelector?: (item: T) => any): any {
         const result = this.GroupBy(keySelector);

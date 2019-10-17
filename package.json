@@ -1,12 +1,12 @@
 {
   "name": "tuna-jslinq",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Linq methods for JavaScript/TypeScript for working with Arrays",
-  "main": "dist/Tuna-JSLinq.js",
-  "typings": "dist/Tuna-JSLinq.d.ts",
+  "main": "dist/tuna-jslinq.js",
+  "typings": "dist/typings/JSLinq.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Baxterboom/Tuna-JSLinq.git"
+    "url": "https://github.com/bcnow/tuna-jslinq.git"
   },
   "keywords": [
     "Linq",
@@ -16,14 +16,20 @@
     "Array",
     "Sorting"
   ],
+  "scripts": {
+    "tsc": "tsc",
+    "bundle": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --name \"JSLinq\"",
+    "bundlemap": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --m dist/tuna-jslinq.js --name \"JSLinq\"",
+    "build": "npm run tsc && npm run bundlemap"
+  },
   "author": {
-    "name": "Baxterboom"
+    "name": "bcnow"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Baxterboom/Tuna-JSLinq/issues"
+    "url": "https://github.com/bcnow/tuna-jslinq/issues"
   },
-  "homepage": "https://github.com/Baxterboom/Tuna-JSLinq",
+  "homepage": "https://github.com/bcnow/tuna-jslinq",
   "devDependencies": {
     "@types/jasmine": "2.8.6",
     "gulp": "3.9.1",

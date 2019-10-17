@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "FirstOrDefault",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "FirstOrDefault",
     function <T>(this: T[], selector?: (item: T, index: number) => boolean): T | null {
         if (!selector) return this.length > 0 ? this[0] : null;
 

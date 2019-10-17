@@ -1,3 +1,5 @@
+import { JSLinqHelper } from "../JSLinqHelper";
+
 JSLinqHelper.NonEnumerable(Array.prototype, "SequenceEqual",
     function <T>(this: T[], array: T[]): boolean {
         if (this === array) {

@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "Any",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "Any",
     function <T>(this: T[], selector?: (item: T, index: number) => boolean): boolean {
         if (!selector) return this.length > 0;
 

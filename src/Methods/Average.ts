@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "Average",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "Average",
     function <T>(this: T[], selector?: (item: T) => number): number {
         return this.Sum(selector) / this.Count();
     });

@@ -1,4 +1,7 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "OrderByDescending",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+import { JSLinqOrder, JSLinqOrderDirection } from "../JSLinqOrder";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "OrderByDescending",
     function <T>(this: T[], selector: (item: T) => any): T[] {
         const ordered = this.Clone();
         ordered._JSLinq.Order = new Array(new JSLinqOrder(JSLinqOrderDirection.Descending, selector));

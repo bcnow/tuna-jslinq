@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "GroupBy",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "GroupBy",
     function <T>(this: T[], selector?: (item: T) => any): any {
         return this.reduce((groups: any, item: T) => {
             const value = selector ? selector(item) : item;

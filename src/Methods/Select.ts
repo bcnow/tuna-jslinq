@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "Select",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "Select",
     function <T>(this: T[], selector: (item: T, index: number) => any): any[] {
         const result = new Array<any>();
 

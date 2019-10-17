@@ -1,4 +1,6 @@
-﻿JSLinqHelper.NonEnumerable(Array.prototype, "FindLastIndex",
+﻿import { JSLinqHelper } from "../JSLinqHelper";
+
+JSLinqHelper.NonEnumerable(Array.prototype, "FindLastIndex",
     function <T>(this: T[], selector: (item: T, index: number) => boolean): number {
         if (!selector) throw new Error("Tuna-JSLinq: You must define a selector");
 

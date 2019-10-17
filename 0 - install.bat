@@ -31,7 +31,9 @@ if /i [%1]==[g] GOTO :GENERATORS
         call npm install gulp
         call npm install -g gulp
     )
-    
+    if not exist %APPDATA%\npm\rollup {
+        call npm install --global rollup
+    }
     call npm set progress=false
     call npm -s install
     call npm set progress=true
