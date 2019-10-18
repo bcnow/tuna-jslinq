@@ -46,6 +46,7 @@ import './Methods/Sum';
 import './Methods/Take';
 import './Methods/TakeWhile';
 import './Methods/ThenBy';
+import './Methods/ThenByDescending';
 import './Methods/ToDictionary';
 import './Methods/Union';
 import './Methods/Where';
@@ -56,9 +57,4 @@ var JSLinq = function (array) {
     }
     return (array || []);
 };
-// JSLinqHelper.NonEnumerable(Array.prototype, "_JSLinq", {
-//     Order: undefined
-// });
-// export function JSLinq(arg: any) { return JSLinqC(arg); }
 export default JSLinq;
-// export JSLinq;

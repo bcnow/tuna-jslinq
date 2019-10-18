@@ -1,4 +1,4 @@
-var JSLinqHelper = /** @class */ (function () {
+var JSLinqHelper = (function () {
     function JSLinqHelper() {
     }
     JSLinqHelper.NonEnumerable = function (instance, name, value) {

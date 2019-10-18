@@ -1,6 +1,6 @@
 {
   "name": "tuna-jslinq",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Linq methods for JavaScript/TypeScript for working with Arrays",
   "main": "dist/tuna-jslinq.js",
   "typings": "dist/typings/JSLinq.d.ts",
@@ -20,10 +20,12 @@
     "Sorting"
   ],
   "scripts": {
-    "tsc": "tsc",
+    "compile": "tsc",
+    "test-compile": "tsc -p ./Tests",
     "bundle": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --name \"JSLinq\"",
     "bundlemap": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --m dist/tuna-jslinq.js --name \"JSLinq\"",
-    "build": "npm run tsc && npm run bundlemap"
+    "build": "npm run compile && npm run bundlemap && npm run test-compile",
+    "test-run": "npm run build && karma start ./tests/karma.conf.js"
   },
   "author": {
     "name": "bcnow"

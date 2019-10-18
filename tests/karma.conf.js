@@ -14,7 +14,7 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser"../src/components/Modal/jQuery.extensions.js",
     files: [
       "../dist/tuna-jslinq.js",
-      "./karma.conf.tests.js"
+      "./Tests/karma.conf.tests.js"
     ],
 
     // list of files to exclude

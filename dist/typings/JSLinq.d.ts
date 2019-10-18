@@ -49,6 +49,7 @@ import './Methods/Sum';
 import './Methods/Take';
 import './Methods/TakeWhile';
 import './Methods/ThenBy';
+import './Methods/ThenByDescending';
 import './Methods/ToDictionary';
 import './Methods/Union';
 import './Methods/Where';

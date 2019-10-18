@@ -7,7 +7,7 @@
         "outFile": "./tests/karma.conf.tests.js"
     },
     "files": [
-        "../dist/tuna-jslinq.d.ts"
+        "../dist/typings/JSLinq.d.ts"
     ],
     "include": [
         "./**/*.ts"

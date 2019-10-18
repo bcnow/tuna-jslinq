@@ -1,0 +1,1 @@
+declare const JSLinq: <T = any>(array?: T | T[] | undefined) => T[];

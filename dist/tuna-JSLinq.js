@@ -4,7 +4,7 @@
     (global = global || self, global.JSLinq = factory());
 }(this, function () { 'use strict';
 
-    var JSLinqHelper = /** @class */ (function () {
+    var JSLinqHelper = (function () {
         function JSLinqHelper() {
         }
         JSLinqHelper.NonEnumerable = function (instance, name, value) {
@@ -256,7 +256,6 @@
         return this;
     });
 
-    //@ts-ignore
     JSLinqHelper.NonEnumerable(Array.prototype, "_JSLinq", {
         Order: undefined
     });
@@ -266,7 +265,7 @@
         JSLinqOrderDirection[JSLinqOrderDirection["Ascending"] = 0] = "Ascending";
         JSLinqOrderDirection[JSLinqOrderDirection["Descending"] = 1] = "Descending";
     })(JSLinqOrderDirection || (JSLinqOrderDirection = {}));
-    var JSLinqOrder = /** @class */ (function () {
+    var JSLinqOrder = (function () {
         function JSLinqOrder(direction, selector) {
             this.direction = direction;
             this.selector = selector;
@@ -361,7 +360,6 @@
         if (this.length !== array.length) {
             return false;
         }
-        // return this.All(item => array.Contains(item));
         for (var i = 0; i < this.length; i++) {
             var left = this[i];
             var right = array[i];
@@ -429,6 +427,25 @@
         });
     });
 
+    JSLinqHelper.NonEnumerable(Array.prototype, "ThenByDescending", function (selector) {
+        var order = this._JSLinq.Order;
+        if (order == null || !order.Any()) {
+            throw new Error("Tuna-JSLinq: Please call OrderBy or OrderByDescending before ThenByDescending");
+        }
+        var ordered = this;
+        order.Add(new JSLinqOrder(JSLinqOrderDirection.Descending, selector));
+        return ordered.sort(function (a, b) {
+            for (var _i = 0, order_1 = order; _i < order_1.length; _i++) {
+                var entry = order_1[_i];
+                var result = JSLinqHelper.OrderCompareFunction(entry.selector, a, b, entry.direction === JSLinqOrderDirection.Descending);
+                if (result !== 0) {
+                    return result;
+                }
+            }
+            return 0;
+        });
+    });
+
     JSLinqHelper.NonEnumerable(Array.prototype, "ToDictionary", function (keySelector, valueSelector) {
         var result = this.GroupBy(keySelector);
         if (valueSelector) {
@@ -471,7 +488,6 @@
         }
         return (array || []);
     };
-    // export JSLinq;
 
     return JSLinq;
 

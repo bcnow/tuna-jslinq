@@ -6,7 +6,6 @@ JSLinqHelper.NonEnumerable(Array.prototype, "SequenceEqual", function (array) {
     if (this.length !== array.length) {
         return false;
     }
-    // return this.All(item => array.Contains(item));
     for (var i = 0; i < this.length; i++) {
         var left = this[i];
         var right = array[i];
