@@ -1,3 +1,3 @@
 cls
 @echo off
-call npm run build
+rem call npm run build
