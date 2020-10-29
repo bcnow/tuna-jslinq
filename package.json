@@ -20,12 +20,13 @@
     "Sorting"
   ],
   "scripts": {
-    "compile": "tsc",
-    "test-compile": "tsc -p ./Tests",
-    "bundle": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --name \"JSLinq\"",
-    "bundlemap": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --m dist/tuna-jslinq.js --name \"JSLinq\"",
-    "build": "npm run compile && npm run bundlemap && npm run test-compile",
-    "test-run": "npm run build && karma start ./tests/karma.conf.js"
+    "tsc": "tsc",
+    "uglify":"uglifyjs --compress --output dist/bundle.min.js --source-map -- dist/bundle.js ",
+    "bundle": "tsc && rollup dist/JSLinq.js --file dist/bundle.js --format umd --name \"JSLinq\"",
+    "bundlewithmap": "tsc && rollup dist/JSLinq.js --file dist/bundle.js --format umd --m dist/bundle.js --name \"JSLinq\"",
+    "build": "npm run tsc && npm run bundlewithmap && npm run uglify",
+    "test-build": "tsc --project tests",
+    "test": "karma start tests/karma.conf.js --log-level debug"
   },
   "author": {
     "name": "bcnow"
@@ -36,17 +37,16 @@
   },
   "homepage": "https://github.com/bcnow/tuna-jslinq",
   "devDependencies": {
-    "@types/jasmine": "2.8.6",
-    "gulp": "3.9.1",
-    "gulp-debug": "3.2.0",
-    "gulp-jasmine": "3.0.0",
-    "gulp-typescript": "5.0.0",
-    "jasmine": "3.1.0",
-    "karma": "2.0.0",
-    "karma-chrome-launcher": "2.2.0",
-    "karma-detect-browsers": "2.3.1",
-    "karma-firefox-launcher": "1.1.0",
-    "karma-jasmine": "1.1.1",
-    "typescript": "3.3.3"
+    "@types/jasmine": "^3.6.0",
+    "jasmine": "^3.6.2",
+    "karma": "^5.2.3",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-detect-browsers": "^2.3.3",
+    "karma-firefox-launcher": "^2.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^4.0.1",
+    "typescript": "^4.0.5",
+    "uglify-js": "^3.11.4",
+    "undertaker-forward-reference": "^1.0.2"
   }
 }

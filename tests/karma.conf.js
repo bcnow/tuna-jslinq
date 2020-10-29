@@ -13,8 +13,8 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser"../src/components/Modal/jQuery.extensions.js",
     files: [
-      "../dist/tuna-jslinq.js",
-      "./Tests/karma.conf.tests.js"
+      "../dist/bundle.min.js",
+      "./karma.conf.tests.js"
     ],
 
     // list of files to exclude
@@ -45,7 +45,7 @@ module.exports = function (config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     //browsers: ["Chrome", "IE", "Firefox", "Opera", "Safari"],
-    browsers: ["Chrome"],
+    browsers: ["Chrome","IE"],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

@@ -3,13 +3,11 @@
 cls
 @echo off
 @echo ========================================================================================================
-@echo             Setting up the project, this might take awhile.
 @echo  (if npm is not found, make sure you install nodejs: https://nodejs.org) 
 @echo =========================================================================================================
 
 REM # clean compontents folder
 call rmdir "./node_modules" /s /q
-call rmdir "./bower_components" /s /q
 
 SET LOCK="0 - install.lock"
 
@@ -26,17 +24,8 @@ if /i [%1]==[g] GOTO :GENERATORS
 
 :INSTALL
     @echo install
-    @echo - npm
-    if not exist %APPDATA%\npm\gulp (
-        call npm install gulp
-        call npm install -g gulp
-    )
-    if not exist %APPDATA%\npm\rollup {
-        call npm install --global rollup
-    }
-    call npm set progress=false
-    call npm -s install
-    call npm set progress=true
+    @echo - npm    
+    call npm ci
 
     GOTO :DONE
     

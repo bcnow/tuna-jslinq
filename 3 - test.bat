@@ -1,3 +1,2 @@
-cls
-@echo off
-call npm run test-run
+call npm run test-build
+call npm run test
