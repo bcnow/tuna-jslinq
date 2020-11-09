@@ -492,4 +492,4 @@
     return JSLinq;
 
 })));
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=tuna-jslinq.js.map
