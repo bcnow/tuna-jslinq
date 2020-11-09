@@ -21,9 +21,9 @@
   ],
   "scripts": {
     "tsc": "tsc",
-    "uglify":"uglifyjs --compress --output dist/bundle.min.js --source-map -- dist/bundle.js ",
-    "bundle": "tsc && rollup dist/JSLinq.js --file dist/bundle.js --format umd --name \"JSLinq\"",
-    "bundlewithmap": "tsc && rollup dist/JSLinq.js --file dist/bundle.js --format umd --m dist/bundle.js --name \"JSLinq\"",
+    "uglify":"uglifyjs --compress --output dist/tuna-jslinq.min.js --source-map -- dist/tuna-jslinq.js ",
+    "bundle": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --name \"JSLinq\"",
+    "bundlewithmap": "tsc && rollup dist/JSLinq.js --file dist/tuna-jslinq.js --format umd --m dist/tuna-jslinq.js --name \"JSLinq\"",
     "build": "npm run tsc && npm run bundlewithmap && npm run uglify",
     "test-build": "tsc --project tests",
     "test": "karma start tests/karma.conf.js --log-level debug"
